@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- Tyre 1 Bean Definition -->
+	<bean id="tyre1Bean" class="com.example.di.Tyres">
+	
+	<!-- Setting Tyre name,place and message Property -->
+		<property name="name" value="MRF"/>
+		<property name="place" value="India"/>
+		<property name="message" value="Make in India"/>
+	</bean>
+
+<!-- Toyota Engine Bean Definition -->
+	<bean id="ToyotaBean" class="com.example.di.ToyotaEngine">
+		<property name="company" value="Toyota"/>
+		<property name="cost" value="300000.00"/>
+	</bean>
+
+<!-- Tyre 2 Bean Definition -->
+	<bean id="tyre2Bean" class="com.example.di.Tyres">
+		<property name="name" value="TVS"/>
+		<property name="place" value="India"/>
+		<property name="message" value="Make in India"/>
+	</bean>
+
+
+<!-- Vehicle Bean Definition with Setter Injection -->
+	<bean id="InjectwithSetter" class="com.example.di.Vehicle">
+	<!-- Setting Engine Property -->
+		<property name="engine" ref="ToyotaBean"/>
+		<!-- Setting Tyre Property -->
+		<property name="tyre" ref="tyre1Bean"/>
+	</bean>
+
+<!-- Vehicle Bean Definition with Constructor Injection -->
+
+	<bean id="InjectwithConstructor" class="com.example.di.Vehicle">
+	<!-- Setting Engine Property with Constructor Argument -->
+		<constructor-arg name="engine" ref="ToyotaBean"/>
+		
+	<!-- Setting Tyre Property with Constructor Argument -->
+		<constructor-arg name="tyre" ref="tyre2Bean"/>
+	</bean>
+
+</beans>

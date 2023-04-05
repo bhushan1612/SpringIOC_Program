@@ -1,0 +1,27 @@
+package com.example.di;
+
+import java.util.Map;
+
+public class EmployeeRecordMap {
+	Map<Integer, String> recordMap;
+
+	public Map<Integer, String> getRecordMap() {
+		return recordMap;
+	}
+
+	public void setRecordMap(Map<Integer, String> recordMap) {
+		this.recordMap = recordMap;
+	}
+
+	public EmployeeRecordMap(Map<Integer, String> recordMap) {
+		super();
+		this.recordMap = recordMap;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeRecordMap [recordMap=" + recordMap + "]";
+	}
+	
+	
+}

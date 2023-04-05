@@ -1,0 +1,44 @@
+package com.example.di;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class EmployeeRecordMap {
+	Map<Integer, String> empList;
+
+	public Map<Integer, String> getRecordMap() {
+		return empList;
+	}
+
+	public void setRecordMap(Map<Integer, String> empList) {
+		this.empList = empList;
+	}
+
+	public EmployeeRecordMap(Map<Integer, String> recordMap) {
+		super();
+		this.empList = recordMap;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeRecordMap [recordMap=" + empList + "]";
+	}
+	
+	public static void main(String[] args) {
+		Map<Integer, String> recordMap = new HashMap<Integer, String>();
+		recordMap.put(101, "Bhushan");
+		recordMap.put(102, "Tushar");
+		recordMap.put(103, "Hitesh");
+		recordMap.put(104, "Piyush");
+		recordMap.put(105, "Kiran");
+		recordMap.put(101, "Bhushan");
+		
+		EmployeeRecordMap emp = new EmployeeRecordMap(recordMap);
+		System.out.println("Using Constructor:= "+emp);
+		System.out.println("-----------------------------------------------------");
+		emp.setRecordMap(recordMap);
+		System.out.println("Using Set Method:= "+emp.getRecordMap());
+		
+		
+	}
+}
